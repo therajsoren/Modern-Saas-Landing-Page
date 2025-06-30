@@ -30,7 +30,7 @@ const ProductShowCase = () => {
         >
           Boost your productivity
         </h3>
-        <h1 className="bg-gradient-to-b from-black to-[#002499]  text-3xl md:text-4xl lg:text-7xl py-6 tracking-tighter text-center bg-clip-text text-transparent font-black    ">
+        <h1 className="bg-gradient-to-b from-black to-[#002499]  text-3xl md:text-4xl lg:text-7xl py-6 tracking-tighter text-center bg-clip-text text-transparent font-black">
           A more effective way to track progress
         </h1>
         <div className="text-center text-lg md:text-xl py-4 max-w-3xl mx-auto tracking-widest">
