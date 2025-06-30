@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className="bg-gradient-to-tr from-[#001E80] via-[#e4eaff] font-medium grid grid-cols-1 xl:grid-cols-2 w-full px-8 max-h-full mx-auto ">
       <div className="lg:pl-[110px] lg:h-[720px] py-[130px] md:w-[630px]">
-        <span className="border-2 rounded-md border-gray-400/80 py-1 px-1 font-mono text-neutral-900 lg:text-lg">
+        <span className="border-2 rounded-full border-gray-400/80 py-2 px-2 font-mono text-neutral-900 lg:text-lg -tracking-widest">
           Version 2.0 is here
         </span>
 
