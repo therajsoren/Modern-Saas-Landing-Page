@@ -62,7 +62,11 @@ const ProductShowCase = () => {
 
 
 
-      <div className="max-w-7xl mx-auto p-4">
+      <motion.div className="max-w-7xl mx-auto p-4"
+        style={{
+          translateY: translateY
+        }}
+      >
         <div className="grid md:grid-cols-4 grid-cols-1 gap-10 mt-10 mx-auto">
           {productDetails.map((productDetail, index) => (
             <div
@@ -81,7 +85,7 @@ const ProductShowCase = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
