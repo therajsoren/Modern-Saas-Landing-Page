@@ -9,14 +9,14 @@ import { useScroll, useTransform } from "framer-motion";
 import { motion } from "motion/react";
 
 const ProductCard = () => {
-    const ref = useRef(null);
+  const ref = useRef(null);
 
-  const {scrollYProgress} = useScroll({
+  const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
-  })
+    offset: ["start end", "end start"],
+  });
 
-  const translateY = useTransform(scrollYProgress,[0,1],[150,-150])
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
   return (
     <div ref={ref} className="py-10 mx-auto">
       <div className="flex items-center justify-center flex-col text-neutral-950 p-4 w-fit mx-auto">
@@ -27,7 +27,7 @@ const ProductCard = () => {
           Everything you need
         </h1>
         <div className="w-[80%]">
-          <h2 className="bg-gradient-to-b from-black to-[#002499]  text-3xl md:text-4xl lg:text-7xl py-6 tracking-tighter text-center bg-clip-text text-transparent font-semibold">
+          <h2 className="bg-gradient-to-b from-black to-[#002499]  text-xl md:text-2xl lg:text-5xl py-6 tracking-tighter text-center bg-clip-text text-transparent font-semibold">
             Streamlined for easy management
           </h2>
         </div>
@@ -37,13 +37,14 @@ const ProductCard = () => {
           quickly.
         </p>
       </div>
-        <motion.div className="grid md:grid-cols-2 grid-cols-1 gap-8 max-w-4xl mx-auto p-10"
-            style={{
-                translateY: translateY
-            }}
-        >
-          <Card />
-        </motion.div>
+      <motion.div
+        className="grid md:grid-cols-2 grid-cols-1 gap-8 max-w-4xl mx-auto p-10"
+        style={{
+          translateY: translateY,
+        }}
+      >
+        <Card />
+      </motion.div>
     </div>
   );
 };
@@ -59,7 +60,11 @@ interface CardProps {
 const cardDetails: CardProps[] = [
   {
     icon: (
-      <Image src={Helix} alt="helix" className="h-full lg:w-80 w-40 object-cover" />
+      <Image
+        src={Helix}
+        alt="helix"
+        className="h-full lg:w-80 w-40 object-cover"
+      />
     ),
     title: "Integration ecosystem",
     description:
@@ -67,7 +72,11 @@ const cardDetails: CardProps[] = [
   },
   {
     icon: (
-      <Image src={Cube} alt="cube" className="h-full lg:w-80 w-40 object-cover" />
+      <Image
+        src={Cube}
+        alt="cube"
+        className="h-full lg:w-80 w-40 object-cover"
+      />
     ),
     title: "Goal setting and tracking",
     description:
@@ -87,7 +96,9 @@ const Card = () => {
           <h1 className="text-neutral-950 font-bold md:text-xl text-lg text-center">
             {cardDetail.title}
           </h1>
-          <p className="py-4 text-center tracking-widest">{cardDetail.description}</p>
+          <p className="py-4 text-center tracking-widest">
+            {cardDetail.description}
+          </p>
         </div>
       ))}
     </>

@@ -1,6 +1,8 @@
+import AboveFooter from "@/components/AboveFooter";
 import BrandSlide from "@/components/BrandSlide";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Pricing from "@/components/Pricing";
 import ProductCard from "@/components/ProductCard";
 import ProductShowCase from "@/components/ProductShowCase";
 
@@ -12,6 +14,8 @@ export default function Home() {
       <BrandSlide />
       <ProductShowCase/>
       <ProductCard/>
+      <Pricing/>
+      <AboveFooter/>
     </div>
   );
 }
