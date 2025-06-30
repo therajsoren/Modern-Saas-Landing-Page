@@ -4,7 +4,6 @@ import { useScroll, useTransform } from "framer-motion";
 import { ReactNode, useRef } from "react";
 import { IoCheckmark } from "react-icons/io5";
 import { motion } from "motion/react";
-import { ul } from "framer-motion/client";
 
 const Pricing = () => {
   const ref = useRef(null);
@@ -73,8 +72,8 @@ const Pricing = () => {
             <div className="flex items-center justify-between">
               <div className="text-slate-500/100">{Pro.pricing}</div>
               <div>
-                <button className="border-0 border-slate-500 rounded-full text-xs p-1 bg-gradient-to-t from-blue-500 via-teal-500 to-orange-500 text-transparent bg-clip-text">
-                  {Pro.popular}
+                <button className="border-2 border-slate-300/30 rounded-full text-xs p-1 bg-transparent bg-gradient-to-t from-blue-500 via-teal-500 to-orange-500 text-transparent bg-clip-text">
+                  {Pro.popular }
                 </button>
               </div>
             </div>

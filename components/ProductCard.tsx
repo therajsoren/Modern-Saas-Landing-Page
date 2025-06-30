@@ -4,7 +4,6 @@ import { ReactNode, useRef } from "react";
 import Helix from "../public/assest/cube-helix 1.png";
 import Cube from "../public/assest/cube-helix.png";
 import Image from "next/image";
-import { div } from "framer-motion/client";
 import { useScroll, useTransform } from "framer-motion";
 import { motion } from "motion/react";
 
