@@ -69,7 +69,7 @@ const Hero = () => {
         <motion.img
           src={HalfTorous.src}
           alt="half torus"
-          className="xl:block hidden transform lg:translate-x-60 xl:-translate-y-50"
+          className="2xl:block hidden transform lg:translate-x-60 xl:-translate-y-50"
           style={{
             translateY: translateY,
           }}

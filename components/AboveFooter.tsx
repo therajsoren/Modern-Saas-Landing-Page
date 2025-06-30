@@ -19,18 +19,18 @@ const AboveFooter = () => {
   return (
     <div
       ref={ref}
-      className="bg-gradient-to-b max-h-full from-neutral-100 to-[#bec9e8]"
+      className="bg-gradient-to-b max-h-full from-neutral-100 to-[#bec9e8] overflow-hidden"
     >
       <div className="flex items-center justify-center flex-col text-neutral-950 relative p-4 w-fit mx-auto">
         <div className="flex items-center justify-center gap-10 absolute top-[-30%] left-[-33%]">
-          <motion.img src={EmojiStar.src} alt="emoji star"
+          <motion.img src={EmojiStar.src} alt="emoji star" className="object-cover xl:block hidden"
           style={{
             translateY: translateY
           }}
           />
         </div>
         <div className="flex items-center justify-center gap-10 absolute top-0 right-[-34%]">
-          <motion.img src={Helix.src} alt="helix" 
+          <motion.img src={Helix.src} alt="helix"  className="object-cover xl:block hidden"
           style={{
             translateY: translateY
           }}
