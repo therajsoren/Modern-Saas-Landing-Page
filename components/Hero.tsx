@@ -3,10 +3,20 @@ import { FaArrowRight } from "react-icons/fa";
 import CylinderImage from "../public/assest/cylinder.png";
 import HeroImage from "../public/assest/Visual.png";
 import HalfTorous from "../public/assest/half-torus.png";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 const Hero = () => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
-    <section className="bg-gradient-to-tr from-[#001E80] via-[#e4eaff] font-medium grid grid-cols-1 xl:grid-cols-2 w-full px-8 max-h-full mx-auto ">
+    <section ref={ref} className="bg-gradient-to-tr from-[#001E80] via-[#e4eaff] font-medium grid grid-cols-1 xl:grid-cols-2 w-full px-8 max-h-full mx-auto ">
       <div className="lg:pl-[110px] lg:h-[720px] py-[130px] md:w-[630px]">
         <span className="border-2 rounded-full border-gray-400/80 py-2 px-2 font-mono text-neutral-900 lg:text-lg -tracking-widest">
           Version 2.0 is here
@@ -36,6 +46,10 @@ const Hero = () => {
           src={CylinderImage.src}
           alt="cylinder"
           className="xl:block hidden absolute left-4 top-16"
+
+          style={{
+            translateY: translateY,
+          }}
         />
 
         <motion.img
@@ -56,6 +70,9 @@ const Hero = () => {
           src={HalfTorous.src}
           alt="half torus"
           className="xl:block hidden transform lg:translate-x-60 xl:-translate-y-50"
+          style={{
+            translateY: translateY,
+          }}
         />
       </div>
     </section>

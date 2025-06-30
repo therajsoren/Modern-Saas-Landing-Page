@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import ProductImage from "../public/assest/Product Image.png";
 import Pyramid from "../public/assest/pyramid.png";
 import TubeImage from "../public/assest/tube.png";
@@ -8,10 +8,21 @@ import { FaArrowRight } from "react-icons/fa";
 import { LuLeaf } from "react-icons/lu";
 import { GoBell, GoGoal } from "react-icons/go";
 import { MdLockOutline } from "react-icons/md";
-
+import { useScroll, useTransform } from "framer-motion";
+import { motion } from "motion/react";
 const ProductShowCase = () => {
+
+  const ref = useRef(null);
+
+  const {scrollYProgress} = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  })
+
+  const translateY = useTransform(scrollYProgress,[0,1],[150,-150])
+
   return (
-    <div className="mt-20 bg-gradient-to-t from-[#acbae8] to-white mx-auto pb-4">
+    <div ref={ref} className="mt-20 bg-gradient-to-t from-[#acbae8] to-white mx-auto pb-4">
       <div className="flex items-center justify-center flex-col text-neutral-950 p-4 w-fit mx-auto lg:w-[80%]">
         <h3
           className="border-2 border-neutral-300 text-sm rounded-full py-1
@@ -33,14 +44,20 @@ const ProductShowCase = () => {
         <div className="flex items-center justify-center">
           <Image src={ProductImage} alt="product image" />
         </div>
-        <div className="absolute top-[-70] right-[20] z-10 xl:block hidden"
+        <motion.div className="absolute top-[-70] right-[20] z-10 xl:block hidden"
+        style={{
+          translateY: translateY
+        }}
         >
           <Image src={Pyramid} alt="pyramid" className="object-cover w-80" />
-        </div>
-        <div className="absolute top-[250] left-[12] z-10 xl:block hidden"
+        </motion.div>
+        <motion.div className="absolute top-[250] left-[12] z-10 xl:block hidden"
+        style={{
+          translateY: translateY
+        }}
         >
           <Image src={TubeImage} alt="tube" className="h-full w-80 object-cover" />
-        </div>
+        </motion.div>
       </div>
 
 
