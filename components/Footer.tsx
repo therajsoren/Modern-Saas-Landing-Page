@@ -45,7 +45,7 @@ const Footer = () => {
           <div className="space-y-2 md:w-auto w-full md:p-0 p-4">
             <h1 className="text-slate-950 md:text-lg text-base">News-letter</h1>
             <div className="overflow-hidden gap-1 flex flex-row  pr-2 pt-2">
-              <input type="email" placeholder="johndoe@gmail.com" className="rounded-md bg-gray-400 w-full px-2 py-1" />
+              <input type="email" placeholder="johndoe@gmail.com" className="rounded-md bg-gray-400 w-full px-2 py-1 outline-none" />
               <button className="border-0 text-gray-300 bg-neutral-800 outline-none rounded-xl px-3 py-1" type="submit">Submit</button>
             </div>
           </div>
